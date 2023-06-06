@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>Customer Registration Form</title>
+    <style>
+        .css label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-row > div {
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="form-container">
+    <div id="customerRegister">
+        <h2>Customer Registration Form</h2>
+        <form action="" method="POST" id="myForm">
+            <!-- division part one-->
+
+            <!-- we use class called form-section this form will be hidden-->
+            <div class="form-section">
+                <div class="form-row">
+                    <div>
+                        <label for="customerType">Customer Type:</label>
+                        <input type="text" id="customerType" name="customerType" required>
+                    </div>
+                    <div>
+                        <label for="customerId">Customer ID:</label>
+                        <input type="text" id="customerId" name="customer_TYPE" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="lE_Book">LE Book:</label>
+                        <input type="text" id="lE_Book" name="lE_Book" required>
+                    </div>
+
+                    <div>
+                        <label for="salutation">Salutation:</label>
+                        <select id="salutation" name="salutation">
+                            <option value="salutation">salutation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="nationIdTYPe">National_ID_TYPE:</label>
+                        <select id="nationIdTYPe" name="national_ID">
+                            <option value="nationalId">national_Id</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nationalId">National_ID_Number:</label>
+                        <input type="text" id="nationalId" name="National_ID_Number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="customerName">Customer_Name:</label>
+                        <input type="text" id="customerName" name="Customer_name" required>
+                    </div>
+                    <div>
+                        <label for="surname">Surname:</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div>
+                        <label for="forename_1">Forename 1:</label>
+                        <input type="text" id="forename_1" name="forename_1" required>
+                    </div>
+                    <div>
+                        <label for="forename2">Forename 2:</label>
+                        <input type="text" id="forename2" name="forename_2">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="customer_Acronym">Customer Acronym:</label>
+                        <input type="text" id="customer_Acronym" name="customer_Acronym">
+                    </div>
+                    <div>
+                        <label for="vision_OUC">Vision OUC:</label>
+                        <input type="text" id="vision_OUC" name="vision_OUC" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="vision_SBU">Vision SBU:</label>
+                        <select id="vision_SBU" name="vision_SBU">
+                            <option value="sbu">SBU</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="customer_open_date">Customer_Open_Date</label>
+                        <input type="text" id="customer_open_date" name="customer_open_date" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="customer_gender">Customer_Gender:</label>
+                        <select id="customer_gender" name="customer_gender">
+                            <option value="customer"> Male</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dateOfBirthday">Date_OF_BirthDay:</label>
+                        <input type="date" id="dateOfBirthday" name="Date_OF_BirthDay" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="place_of_birthday">Place_Of_BirthDay:</label>
+                        <select id="place_of_birthday" name="place_of_birthday">
+                            <option value="country">country</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="marital_Status">Marital Status:</label>
+                        <select id="marital_Status" name="marital_Status">
+                            <option value="single">Single</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="spouse_name">Spouse_Name:</label>
+                        <input type="text" id="spouse_name" name="Spouse Name" required>
+                    </div>
+                    <div>
+                        <label for="social_economic">Social_Economic_Class:</label>
+                        <select id="social_economic" name="Social Economic Class">
+                            <option value="ubudehe">ubudehe1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="nextOfKinName">Next_of_kin_Name:</label>
+                        <input type="text" id="nextOfKinName" name="next_of_kin_name" required>
+                    </div>
+                    <div>
+                        <label for="nextOfKinIDType">next_of_kin_ID_Type:</label>
+                        <select id="nextOfKinIDType" name="next_of_kin_id_Type">
+                            <option value="nationalId">nationalId</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="next_of_kin_Id_number">next-of-kin-ID_Number:</label>
+                        <input type="text" id="next_of_kin_Id_number" name="forename_1" required>
+                    </div>
+                    <div>
+                        <label for="next_of_kin_telephone">next_of_kin_telephone:</label>
+                        <input type="text" id="next_of_kin_telephone" name="next_of_kin_Telephone" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="next_of_kin_email_ID">next_of_kin_Email_ID:</label>
+                        <input type="text" id="next_of_kin_email_ID" name="next_of_kin_Email_ID" required>
+                    </div>
+                    <div>
+                        <label for="number_of_dependants">number_of_Dependants:</label>
+                        <input type="text" id="number_of_dependants" name="number_of_Dependants" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="nationality">Nationality:</label>
+                        <select id="nationality">
+                            <option value="nationality1">nationality</option>
+
+                        </select>
+
+                    </div>
+                    <div>
+                        <label for="residence"> Residence:</label>
+                        <input type="text" id="residence" name="resident" required>
+                    </div>
+                    <div>
+                        <div class="form-row">
+                            <div>
+                                <label for="comm_address2">Comm_address_2:</label>
+                                <input type="text" id="comm_address2" name="comm_address_2">
+                            </div>
+                            <div>
+                                <label for="province">Province:</label>
+                                <select id="province" name="province">
+                                    <option value="province1">province1</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" onclick="showSection(1)">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- second division will show up on second page-->
+
+            <!-- we use class called form-section this form will be hidden-->
+            <div class="form-section hidden">
+                <div class="form-row">
+                    <div>
+                        <label for="district">District:</label>
+                        <select id="district" name="district">
+                            <option value="district">district</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sector">Sector:</label>
+                        <select id="sector" name="sector">
+                            <option value="sector1">sector</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="cell">Cell:</label>
+                        <select id="cell" name="cell">
+                            <option value="cell1">cell1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="commAddressVilla">Comm_Address_villa:</label>
+                        <select id="commAddressVilla" name="comm_address_vialla">
+                            <option value="village">village1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="comm_country">Comm_country:</label>
+                        <select id="comm_country" name="comm_country">
+                            <option value="country1">country1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="commResidentType">comm_resident_type:</label>
+                        <select id="commResidentType" name="comm_resident_type">
+                            <option value="country">country</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="perm_address1">perm_Address_1:</label>
+                        <input type="text" id="perm_address1" name="perm_Address_1" required>
+                    </div>
+                    <div>
+                        <label for="perm_address2">perm_Address_2:</label>
+                        <input type="text" id="perm_address2" name="perm_Address_2" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="PermProvinceId">perm_province_id:</label>
+                        <select id="PermProvinceId" name="PermProvinceId">
+                            <option value="province">province</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="permDistrict">perm_district:</label>
+                        <select id="permDistrict" name="permDistrict">
+                            <option value="permDistrict">district</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="perm_sector">perm_sector:</label>
+                        <select id="perm_sector" name="perm_sector">
+                            <option value="sector">sector</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="permCell">perm_cell:</label>
+                        <select id="permCell" name="perm_cell">
+                            <option value="cell">cell</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="permVillage">perm_village:</label>
+                        <select id="permVillage" name="permVillage">
+                            <option value="village">village</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="perm_country">perm_country:</label>
+                        <select id="perm_country" name="perm_country">
+                            <option value="country">country</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="email_id">Email_Id:</label>
+                        <input type="text" id="email_id" name="email_id" required>
+                    </div>
+                    <div>
+                        <label for="work_telephone">Work_Telephone:</label>
+                        <input type="text" id="work_telephone" name="work_telephone" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="home_telephone">Home_telephone:</label>
+                        <input type="text" id="home_telephone" name="home_telephone" required>
+                    </div>
+                    <div>
+                        <label for="fax_number1">Fax_number_1:</label>
+                        <input type="text" id="fax_number1" name="fax_number_1" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="fax_number2">Fax_number_2:</label>
+                        <input type="text" id="fax_number2" name="fax_number_2" required>
+                    </div>
+                    <div>
+                        <label for="education">Education:</label>
+                        <select id="education" name="education">
+                            <option value="education">education</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="customer_tin">Customer_TIN:</label>
+                        <input type="text" id="customer_tin" name="customer_TIN" required>
+                    </div>
+                    <div>
+                        <label for="naics_code">NAICS_CODE:</label>
+                        <select id="naics_code" name="NAICS_CODE">
+                            <option value="naicsCode">naicsCode</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div>
+                        <label for="econSubSectCodeISI">ecSubSectCISIC:</label>
+                        <select id="econSubSectCodeISI" name="econSubSectCodeISI">
+                            <option value="econSubSectCodeISIC">econSubSectCodeISIC</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="relatedParty">related_Party:</label>
+                        <select id="relatedParty" name="relatedParty">
+                            <option value="Related_Party">Related_Party</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="relationshipType">relationship_Type:</label>
+                        <select id="relationshipType" name="relationshipType">
+                            <option value="relationshipType">relationship_Type</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="relatedPartyName">relatedPartyName:</label>
+                        <select id="relatedPartyName" name="relatedPartyName">
+                            <option value="related_Party">related_Party</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="ssn_number">SSN_NUMBER:</label>
+                        <input type="text" id="ssn_number" name="ssn_number" required>
+                    </div>
+                    <div>
+                        <label for="health_Insurance_Number">health_Insurance_Number:</label>
+                        <input type="text" id="health_Insurance_Number" name="health_Insurance_Number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="occupation">Occupation:</label>
+                        <select id="occupation" name="occupation">
+                            <option value="occupation">occupation</option>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="employer_name">Employer_name</label>
+                        <input type="text" id="employer_name" name="employer_name" required>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="button" onclick="showSection(2)">Next</button>
+                </div>
+            </div>
+
+
+            <!--Division for part 3 -->
+
+            <!-- The last page we don't need to hidd this page because this's last page-->
+            <div class="form-section hidden">
+                <div class="form-row">
+                    <div>
+                        <label for="employeId">Employee_Id:</label>
+                        <input type="text" id="employeId" name="employee_Id" required>
+                    </div>
+                    <div>
+                        <label for="empAddress1">Emp_Address_1:</label>
+                        <input type="text" id="empAddress1" name="emp_address_1" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="empAddress2">Emp_address_2:</label>
+                        <input type="text" id="empAddress2" name="emp_address_2" required>
+                    </div>
+                    <div>
+                        <label for="emp_country">Emp_country:</label>
+                        <select id="emp_country" name="emp_country">
+                            <option value="country">country</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="emp_province">Emp_province:</label>
+                        <select id="emp_province" name="emp_province">
+                            <option value="province">province</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="emp_district">Emp_district:</label>
+                        <select id="emp_district" name="emp_district">
+                            <option value="district">district</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="emp_sector">Emp_sector:</label>
+                        <select id="emp_sector" name="emp_sector">
+                            <option value="sector">sector</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="emp_cell">Emp_cell:</label>
+                        <select id="emp_cell" name="emp_cell">
+                            <option value="cell">cell</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="emp_village">Emp_village:</label>
+                        <select id="emp_village" name="emp_village">
+                            <option value="village">village</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="income">Income:</label>
+                        <select id="income" name="income">
+                            <option value="income">income</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="income_Frequency">Income_Frequency:</label>
+                        <select id="income_Frequency" name="income_Frequency">
+                            <option value="IncomeFrequency">IncomeFrequency</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="legal_Status">Legal_Status:</label>
+                        <select id="legal_Status" name="legal_Status">
+                            <option value="legal_Status">legal_Status</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="customer_Status">Customer_Status:</label>
+                        <select id="customer_Status" name="customer_Status">
+                            <option value="customer_Status">customer_Status</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dateLastModified">date_Last_Modified:</label>
+                        <input type="date" id="dateLastModified" name="date_Last_Modified" required>
+                    </div>
+                </div>
+                <!-- we will call displayData function from javaScript this function will be controlling all activity that will be
+                in this html form those are fetching data from API, Storing data in LocalStorage, localSession, making  summary-->
+                <div>
+                    <button type="submit" onclick="displayData(event)">Submit</button>
+                </div>
+                <div>
+                    <button type="botton" onclick="afterSubmit()">Display</button>
+                </div>
+
+                <div>
+                    <button type="submit" onclick="submitInDatabase()">Send</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+    <div id="summary">
+        <!-- this form will show customer the list of what they have written before they make submitting this form
+        this form will show up summary which will be submitted-->
+        <div>
+            <h1> Part I Personal identification Summary: </h1>
+            <hr>
+            <ul>
+                <li id="CustomerType-S">CustomerType:</li>
+                <li id="CustomerId-S">CustomerId:</li>
+                <li id="LE_book-S">LE_book:</li>
+                <li id="Salutation-S">Salutation:</li>
+                <li id="Nation_Id_Type-S">Nation_Id_Type:</li>
+                <li id="National_ID_Number-S">National_ID_Number:</li>
+                <li id="Customer_Name-S">Customer_Name:</li>
+                <li id="Surname-S">Surname:</li>
+                <li id="ForeName1-S">ForeName1:</li>
+                <li id="ForeName2-S">ForeName2:</li>
+                <li id="Customer_Acronym-S">Customer_Acronym:</li>
+                <li id="VisionOUC-S">VisionOUC:</li>
+                <li id="VisionSUB-S">VisionSUB:</li>
+                <li id="Customer_Open_Date-S">Customer_Open_Date</li>
+                <li id="Customer_Gender-S">Customer_Gender</li>
+                <li id="Date_OF_BirthDay-S">Date_OF_BirthDay:</li>
+                <li id="PlaceOfBirthDay-S">PlaceOfBirthDay:</li>
+                <li id="MaritalStatus-S">MaritalStatus:</li>
+                <li id="Spouse_Name-S">Spouse_Name:</li>
+            </ul>
+            <hr>
+            <hr>
+            <h1>Part II Personal identification Summary</h1>
+            <ul>
+                <li id="Social_Economic_Class-S">Social_Economic_Class:</li>
+                <li id="Nex_of_kin_Name-S">Nex_of_kin_Name:</li>
+                <li id="Next_of_kin_Id_Type-S">Next_of_kin_Id_Type:</li>
+                <li id="Next_of_kin_id_number-S">Next_of_kin_id_number:</li>
+                <li id="Next_of_kin_telephone-S">Next_of_kin_telephone:</li>
+                <li id="Next_of_kin_Email_Id-S">Next_of_kin_Email_Id</li>
+                <li id="Number_of_dependants-S">Number_of_dependants:</li>
+                <li id="Nationality-S">Nationality:</li>
+                <li id="Resident-S">Resident:</li>
+                <li id="Comm_Address_2-S">Comm_Address_2:</li>
+                <li id="Province-S">Province:</li>
+                <li id="District-S">District:</li>
+                <li id="Sector-S">Sector:</li>
+                <li id="Cell-S">Cell:</li>
+                <li id="Village-S">Village:</li>
+                <li id="Comm_Address_village-S">Comm_Address_village:</li>
+                <li id="Comm_country-S">Comm_country</li>
+                <li id="Comm_resident_Type-S">Comm_resident_Type:</li>
+                <li id="Perm_Address_1-S">Perm_Address_1</li>
+            </ul>
+
+            <hr>
+            <hr>
+            </ul>
+            <h1> Part III Personal Identification Summary</h1>
+            <ul>
+                <li id="Perm_perm_Address_2-S">Perm_perm_Address_2</li>
+                <li id="perm_province_id-S">perm_province_id:</li>
+                <li id="perm_perm_district-S">perm_perm_district</li>
+                <!-- add -->
+                <li id="perm_sector-S"></li>
+                <li id="perm-cell-S"></li>
+                <li id="perm_village-S">perm_village:</li>
+                <li id="perm_country-S">perm_country:</li>
+                <li id="Email_Id-S">Email_Id:</li>
+                <li id="Perm_Work_Telephone-S">Perm_Work_Telephone:</li>
+                <li id="Home_telephone-S">Home_telephone:</li>
+                <li id="Fax_Number_1-S">Fax_Number_1:</li>
+                <li id="Fax_number_2-S">Fax_number_2:</li>
+                <li id="Education-S">Education:</li>
+                <li id="Customer_TIN-S">Customer_TIN:</li>
+                <li id="NAICS_CODE-S">NAICS_CODE:</li>
+                <li id="EconomSubSectorCodeISIC-S">EconomSubSectorCodeISIC:</li>
+                <li id="related_Party-S">related_Party:</li>
+                <li id="relationship_type-S">relationship_type:</li>
+                <li id="relatedPartyName-S">relatedPartyName:</li>
+                <li id="SSN_NUMBER-S">SSN_NUMBER:</li>
+                <li id="health_Insurance_Number-S">health_Insurance_Number:</li>
+                <li id="Occupation-S">Occupation:</li>
+                <li id="Employer_Name-S">Employer_Name:</li>
+                <li id="Employee_Id-S">Employee_Id:</li>
+                <li id="Emp_Address_1-S">Emp_Address_1:</li>
+                <li id="Emp_address_2-S">Emp_address_2:</li>
+                <li id="Emp_country-S">Emp_country:</li>
+                <li id="Emp_province-S">Emp_province:</li>
+            </ul>
+
+            <hr>
+            <hr>
+            <ul>
+
+                <li id="Emp_district-S">Emp_district:</li>
+                <li id="Emp_Sector-S">Emp_Sector:</li>
+                <li id="Emp_cell-S">Emp_cell:</li>
+                <li id="Emp_village-S">Emp_village:</li>
+                <li id="Income-S">Income:</li>
+                <li id="Income_Frequency-S">Income_Frequency:</li>
+                <li id="Legal_status-S">Legal_status:</li>
+                <li id="Customer_status-S">Customer_status:</li>
+                <li id="Date_Last_Modified-S">Date_Last_Modified:</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+<script>
+// creating function which will be holding all activities
+    async function displayData(event) {
+        // Here we  are making declaration for each id from Html form which will accepting value from the user.
+        //
+        let customerType = document.getElementById('customerType').value;
+        let customerId = document.getElementById('customerId').value;
+        let lEBook = document.getElementById('lE_Book').value;
+        let salutation = document.getElementById('salutation');
+        let nation_id_type = document.getElementById('nationIdTYPe')
+        let national_id_number = document.getElementById('nationalId').value;
+        let customer_name = document.getElementById('customerName').value;
+        let surname = document.getElementById('surname').value;
+        let forename1 = document.getElementById('forename_1').value;
+        let forename2 = document.getElementById('forename2').value;
+        let customerAcronym = document.getElementById('customer_Acronym').value;
+        let visionOUC = document.getElementById('vision_OUC').value;
+        let visionSBU = document.getElementById('vision_SBU');
+        let customerOPenDate = document.getElementById('customer_open_date').value;
+        let customerGender = document.getElementById('customer_gender');
+        let dateOfBirthDay = document.getElementById('dateOfBirthday').value;
+
+        let placeOfBirthday = document.getElementById('place_of_birthday');
+        let maritalStatus = document.getElementById('marital_Status');
+        let spouseName = document.getElementById('spouse_name').value;
+        let socialEconomicClass = document.getElementById('social_economic');
+        let nextOfKinName = document.getElementById('nextOfKinName').value;
+        let nextOfKinIDType = document.getElementById('nextOfKinIDType');
+        let nextOfKinIdNumber = document.getElementById('next_of_kin_Id_number').value;
+        let nextOfKinTelephone = document.getElementById('next_of_kin_telephone').value;
+        let nextOfKinEmailId = document.getElementById('next_of_kin_email_ID').value;
+        let numberOfDependants = document.getElementById('number_of_dependants').value;
+        let country = document.getElementById('nationality');
+        let nationality = document.getElementById('nationality');
+        let residence = document.getElementById('residence').value;
+        let commonAddress2 = document.getElementById('comm_address2').value;
+        let province = document.getElementById('province');
+        let district = document.getElementById('district');
+        let sector = document.getElementById('sector');
+        let cell = document.getElementById('cell');
+        let commAddressVillage = document.getElementById('commAddressVilla');
+        let commCountry = document.getElementById('comm_country');
+
+
+        let commResidentType = document.getElementById('commResidentType');
+        let permAddress1 = document.getElementById('perm_address1').value;
+        let permAddress2 = document.getElementById('perm_address2').value;
+        let permProvince = document.getElementById('PermProvinceId');
+        let permDistrict = document.getElementById('permDistrict');
+        let permSector = document.getElementById('perm_sector');
+        let permCell = document.getElementById('permCell');
+        let permVillage = document.getElementById('permVillage');
+        let permCountry = document.getElementById('perm_country');
+        let emailId = document.getElementById('email_id').value;
+        let workTelephone = document.getElementById('work_telephone').value;
+        let homeTelephone = document.getElementById('home_telephone').value;
+        let faxNumber1 = document.getElementById('fax_number1').value;
+        let faxNumber2 = document.getElementById('fax_number2').value;
+        let education = document.getElementById('education');
+        let customerIT = document.getElementById('customer_tin').value;
+        let naicsCode = document.getElementById('naics_code');
+        let econSubSectCodeISI = document.getElementById('econSubSectCodeISI');
+        let relatedParty = document.getElementById('relatedParty');
+        let relationshipType = document.getElementById('relationshipType');
+        let relatedPartyName = document.getElementById('relatedPartyName');
+        let ssnNumber = document.getElementById('ssn_number').value;
+        let healthInsuranceNumber = document.getElementById('health_Insurance_Number').value;
+        let occupation = document.getElementById('occupation');
+        let employerName = document.getElementById('employer_name').value;
+        let employeId = document.getElementById('employeId').value;
+        let empAddress1 = document.getElementById('empAddress1').value;
+        let empAddress2 = document.getElementById('empAddress2').value;
+        let empCountry = document.getElementById('emp_country');
+        let empProvince = document.getElementById('emp_province');
+        let empDistrict = document.getElementById('emp_district');
+        let empSector = document.getElementById('emp_sector');
+        let empCell = document.getElementById('emp_cell');
+        let empVillage = document.getElementById('emp_village');
+        let income = document.getElementById('income');
+        let incomeFrequency = document.getElementById('income_Frequency');
+        let legalStatus = document.getElementById('legal_Status');
+        let customerStatus = document.getElementById('customer_Status');
+        let LastModifiedData = document.getElementById('dateLastModified').value;
+
+
+        var getAllSalutation = await fetch("http://localhost:8080/findSalutation");
+        var dataSalutation = await getAllSalutation.json();
+        for (var i = 0; i < dataSalutation.length; i++) {
+            var bestSalutation = dataSalutation[i].salutationDescription;
+            var option1 = document.createElement('option');
+            option1.textContent = bestSalutation;
+            salutation.appendChild(option1);
+        }
+        var getAllNationalIdType = await fetch("http://localhost:8080/findNationalId")
+        var dataNationalIdTYPe = await getAllNationalIdType.json();
+        for (var i = 0; i < dataSalutation.length; i++) {
+            var bestNationalIdType = dataNationalIdTYPe[i].id_type;
+            var option = document.createElement('option');
+            option.textContent = bestNationalIdType;
+            nation_id_type.appendChild(option);
+            // console.log(bestNationalIdType);
+        }
+        var getAllPlaceOfBirthDay = await fetch("http://localhost:8080/findCountry");
+        var dataPlaceOfBirthDay = await getAllPlaceOfBirthDay.json();
+        for (var i = 0; i < dataPlaceOfBirthDay.length; i++) {
+            var bestPlaceOfBirthday = dataPlaceOfBirthDay[i].country_Description;
+            var option = document.createElement('option');
+            option.textContent = bestPlaceOfBirthday;
+            placeOfBirthday.appendChild(option);
+            //console.log(bestPlaceOfBirthday);
+
+        }
+        var getAllCustomerGender = await fetch("http://localhost:8080/findCustomerGender");
+        var dataCustomerGender = await getAllCustomerGender.json();
+        for (var i = 0; i < dataCustomerGender.length; i++) {
+            var bestCustomerGender = dataCustomerGender[i].genderDescription;
+            var option = document.createElement('option');
+            option.textContent = bestCustomerGender;
+            customerGender.appendChild(option);
+            //console.log(customerGender);
+        }
+
+
+        var getAllVisionSBU = await fetch("http://localhost:8080/findVisionSbu");
+        var dataVisionSBU = await getAllVisionSBU.json();
+        for (var i = 0; i < dataVisionSBU.length; i++) {
+            let bestVisionSBU = dataVisionSBU[i].vision_SBU;
+            let option = document.createElement('option');
+            option.textContent = bestVisionSBU;
+            visionSBU.appendChild(option);
+            //console.log(bestVisionSBU)
+        }
+        var getAllCountry = await fetch("http://localhost:8080/findCountry");
+        var dataCountry = await getAllCountry.json();
+
+        for (var i = 0; i < dataCountry.length; i++) {
+            var dataCountr = dataCountry[i].country_Description;
+            let option = document.createElement('option');
+            option.textContent = dataCountr;
+            country.appendChild(option);
+            //console.log(country);
+
+        }
+
+        var getAllMaritalStatus = await fetch("http://localhost:8080/findMaritalStatus");
+        var dataMaritalStatus = await getAllMaritalStatus.json();
+        for (var i = 0; i < dataMaritalStatus.length; i++) {
+            var bestMaritalStatus = dataMaritalStatus[i].interfaces;
+            var option = document.createElement('option')
+            option.textContent = bestMaritalStatus;
+            maritalStatus.appendChild(option);
+            //console.log(bestMaritalStatus);
+        }
+        var getAllSocialEconomicClass = await fetch("http://localhost:8080/findSocialEconomic")
+        var dataSocialEconomic = await getAllSocialEconomicClass.json();
+        for (var i = 0; i < dataSocialEconomic.length; i++) {
+            var bestSocialEconomic = dataSocialEconomic[i].description;
+            var option = document.createElement('option');
+            option.textContent = bestSocialEconomic;
+            socialEconomicClass.appendChild(option);
+        }
+        var getAllNextOfKinIDType = await fetch("http://localhost:8080/findNationalId");
+        var dataNextOfKinIdType = await getAllNextOfKinIDType.json();
+        for (var i = 0; i < dataNextOfKinIdType.length; i++) {
+            var bestNextOfKinId = dataNextOfKinIdType[i].id_type;
+            var option = document.createElement('option');
+            option.textContent = bestNextOfKinId;
+            nextOfKinIDType.appendChild(option);
+        }
+
+        var getProvince = await fetch("http://localhost:8080/findProvince");
+        var dataProvince = await getProvince.json();
+        for (var i = 0; i < dataProvince.length; i++) {
+            var option = document.createElement('option');
+            option.value = dataProvince[i].province_List_Description;
+            option.textContent = dataProvince[i].province_List_Description;
+            province.appendChild(option);
+            // console.log(option);
+
+        }
+
+
+        var getDistrict = await fetch("http://localhost:8080/findDistrict");
+        var dataDistrict = await getDistrict.json();
+        province.addEventListener('change', function () {
+            var selectedProvince = province.value;
+            district.innerHTML = '';
+
+            for (var i = 0; i < dataDistrict.length; i++) {
+                if (dataDistrict[i].province_List_Description == selectedProvince) {
+                    var option = document.createElement('option');
+                    option.value = dataDistrict[i].district_List_Description;
+                    option.textContent = dataDistrict[i].district_List_Description
+                    district.appendChild(option);
+                    //console.log(option);
+                }
+            }
+        });
+
+
+        // var getAllSector = await fetch("http://localhost:8080/findSector");
+        // var dataSector = await getAllSector.json();
+        // for (var i = 0; i < dataSector.length; i++){
+        //     var bestSector = dataSector[i].sector_List_Description;
+        //     var option = document.createElement('option');
+        //     option.textContent = bestSector;
+        //     sector.appendChild(option);
+        //     //console.log(bestSector)
+        //
+        // }
+        var getSector = await fetch("http://localhost:8080/findSector");
+        var dataSector = await getSector.json();
+        district.addEventListener('change', function () {
+            var selectedDistrict = district.value;
+            sector.innerHTML = '';
+            for (var i = 0; i < dataSector.length; i++) {
+                if (dataSector[i].district_List_Description == selectedDistrict) {
+                    var option = document.createElement('option');
+                    option.value = dataSector[i].sector_List_Description;
+                    option.textContent = dataSector[i].sector_List_Description;
+                    sector.appendChild(option);
+                    console.log(option);
+                }
+            }
+        });
+
+        // var getAllCell = await fetch("http://localhost:8080/findCell");
+        // var dataCell = await getAllCell.json();
+        // for (var i = 0; i < dataCell.length; i++){
+        //     var bestCell = dataCell[i].cell_List_Description;
+        //     var option = document.createElement('option');
+        //     option.textContent = bestCell;
+        //     cell.appendChild(option);
+        // }
+        var getCell = await fetch("http://localhost:8080/findCell");
+        var dataCell = await getCell.json();
+        sector.addEventListener('change', function () {
+            var selectedSector = sector.value;
+            cell.innerHTML = '';
+            for (var i = 0; i < dataCell.length; i++) {
+                if (dataCell[i].sector_List_Description == selectedSector) {
+                    var option = document.createElement('option');
+                    option.value = dataCell[i].cell_List_Description;
+                    option.textContent = dataCell[i].cell_List_Description;
+                    cell.appendChild(option);
+
+
+                }
+            }
+        });
+        // var getCommVillage = await fetch("http://localhost:8080/findVillage");
+        // var dataVillage = await getCommVillage.json();
+        // for (var i = 0; i < dataVillage.length; i++){
+        //     var bestVillage = dataVillage[i].village_List_Description;
+        //     var option = document.createElement('option');
+        //     option.textContent = bestVillage;
+        //     commAddressVillage.appendChild(option);
+        //     //console.log(bestVillage);
+        // }
+        var getCommVillage = await fetch("http://localhost:8080/findVillage");
+        var dataCommVillage = await getCommVillage.json();
+        cell.addEventListener('change', function () {
+            var selectedCell = cell.value;
+            commAddressVillage.innerHTML = '';
+            for (var i = 0; i < dataCommVillage.length; i++) {
+                if (dataCommVillage[i].cell_List_Description == selectedCell) {
+                    var option = document.createElement('option');
+                    option.value = dataCommVillage[i].village_List_Description;
+                    option.textContent = dataCommVillage[i].village_List_Description;
+                    commAddressVillage.appendChild(option);
+                    console.log(option);
+                }
+            }
+        });
+
+        var getAllCommCountry = await fetch("http://localhost:8080/findCountry");
+        var dataCommCountry = await getAllCommCountry.json();
+        for (var i = 0; i < dataCommCountry.length; i++) {
+            var bestCommCountry = dataCommCountry[i].country_Description;
+            var option = document.createElement('option');
+            option.textContent = bestCommCountry;
+            commCountry.appendChild(option);
+        }
+        var getCommResidentType = await fetch("http://localhost:8080/findCountry");
+        var dataCommResidentType = await getCommResidentType.json();
+        for (var i = 0; i < dataCommResidentType.length; i++) {
+            var bestCommResidentType = dataCommResidentType[i].country_Description;
+            var option = document.createElement('option');
+            option.textContent = bestCommResidentType;
+            commResidentType.appendChild(option);
+            //console.log(bestCommResidentType);
+        }
+        // fetching data from server
+
+        // var getPermProvince = await fetch("http://localhost:8080/findProvince");
+        // var dataPermProvince = await getPermProvince.json();
+        // for (var i = 0; i< dataPermProvince.length; i++){
+        //     var bestPermProvince = dataPermProvince[i].province_List_Description;
+        //     var option = document.createElement('option');
+        //     option.textContent = bestPermProvince;
+        //     permProvince.appendChild(option);
+        //     //console.log(bestProvince);
+        // }
+        var getPermProvince = await fetch("http://localhost:8080/findProvince");
+        var dataPermProvince = await getPermProvince.json();
+        for (var i = 0; i < dataPermProvince.length; i++) {
+            var option = document.createElement('option');
+            option.value = dataPermProvince[i].province_List_Description;
+            option.textContent = dataPermProvince[i].province_List_Description;
+            permProvince.appendChild(option);
+            // console.log(option);
+        }
+
+        var getPermDistrict = await fetch("http://localhost:8080/findDistrict");
+        var dataPermDistrict = await getPermDistrict.json();
+        permProvince.addEventListener('change', function () {
+            var selectedProvince = permProvince.value;
+            permDistrict.innerHTML = '';
+
+            for (var i = 0; i < dataPermDistrict.length; i++) {
+                if (dataPermDistrict[i].province_List_Description == selectedProvince) {
+                    var option = document.createElement('option');
+                    option.value = dataPermDistrict[i].district_List_Description;
+                    option.textContent = dataPermDistrict[i].district_List_Description
+                    permDistrict.appendChild(option);
+                    //  console.log(option);
+                }
+            }
+        });
+
+        var getPermSector = await fetch("http://localhost:8080/findSector");
+        var dataPermSector = await getPermSector.json();
+        permDistrict.addEventListener('change', function () {
+            var selectedDistrict = permDistrict.value;
+            permSector.innerHTML = '';
+            for (var i = 0; i < dataPermSector.length; i++) {
+                if (dataPermSector[i].district_List_Description == selectedDistrict) {
+                    var option = document.createElement('option');
+                    option.value = dataPermSector[i].sector_List_Description;
+                    option.textContent = dataPermSector[i].sector_List_Description;
+                    permSector.appendChild(option);
+                    //console.log(option);
+                }
+            }
+
+        });
+
+        var getPermCell = await fetch("http://localhost:8080/findCell");
+        var dataPermCell = await getPermCell.json();
+        permSector.addEventListener('change', function () {
+            var selectedSector = permSector.value;
+            permCell.innerHTML = '';
+            for (var i = 0; i < dataPermCell.length; i++) {
+                if (dataPermCell[i].sector_List_Description == selectedSector) {
+                    var option = document.createElement('option');
+                    option.value = dataPermCell[i].cell_List_Description;
+                    option.textContent = dataPermCell[i].cell_List_Description;
+                    permCell.appendChild(option);
+                    //console.log(option);
+
+                }
+            }
+        });
+        // var getAllPermVillage  = await fetch("http://localhost:8080/findVillage");
+        // var dataPermVillage = await getAllPermVillage.json();
+        // for (var i = 0; i < dataPermVillage.length; i++){
+        //     var bestPermVillage = dataPermVillage[i].village_List_Description;
+        //     var option = document.createElement('option');
+        //     option.textContent = bestPermVillage;
+        //     permVillage.appendChild(option);
+        //     //console.log(bestPermVillage);
+        // }
+
+        var getPermVillage = await fetch("http://localhost:8080/findVillage");
+        var dataPermVillage = await getPermVillage.json();
+        permCell.addEventListener('change', function () {
+            var selectedCell = permCell.value;
+            permVillage.innerHTML = '';
+            for (var i = 0; i < dataPermVillage.length; i++) {
+                if (dataPermVillage[i].cell_List_Description == selectedCell) {
+                    var option = document.createElement('option');
+                    option.value = dataPermVillage[i].village_List_Description;
+                    option.textContent = dataPermVillage[i].village_List_Description;
+                    permVillage.appendChild(option);
+                    // console.log(option);
+                }
+            }
+        });
+        var getPermCountry = await fetch("http://localhost:8080/findCountry");
+        var dataPermCountry = await getPermCountry.json();
+        for (var i = 0; i < dataPermCountry.length; i++) {
+            var bestPermCountry = dataPermCountry[i].country_Description;
+            var option = document.createElement('option');
+            option.textContent = bestPermCountry;
+            permCountry.appendChild(option);
+            //console.log(bestPermCountry);
+        }
+        var getEducation = await fetch("http://localhost:8080/findEducation");
+        var dataEducation = await getEducation.json();
+        for (var i = 0; i < dataEducation.length; i++) {
+            var bestEducation = dataEducation[i].education_Description;
+            var option = document.createElement('option');
+            option.textContent = bestEducation;
+            education.appendChild(option);
+            //console.log(bestEducation);
+        }
+        var getNacsCode = await fetch("http://localhost:8080/findNaicsCode");
+        var dataNacsCode = await getNacsCode.json();
+        for (var i = 0; i < dataNacsCode.length; i++) {
+            var bestNaics = dataNacsCode[i].naics_Description;
+            var option = document.createElement('option');
+            option.textContent = bestNaics;
+            naicsCode.appendChild(option);
+            // console.log(bestNaics);
+        }
+        var getAlleconSubSectCodeISIC = await fetch("http://localhost:8080/findEconomicSubSector");
+        var dataEconSubSector = await getAlleconSubSectCodeISIC.json();
+        for (var i = 0; i < dataEconSubSector.length; i++) {
+            var bestEconSubSect = dataEconSubSector[i].economic_SUB_SECTOR_CODE_ISIC_DESC;
+            var option = document.createElement('option');
+            option.textContent = bestEconSubSect;
+            econSubSectCodeISI.appendChild(option);
+            // console.log(bestEconSubSect);
+        }
+        var getAllRelatedParty = await fetch("http://localhost:8080/findRelatedParty");
+        var dataRelatedParty = await getAllRelatedParty.json();
+        for (var i = 0; i < dataRelatedParty.length; i++) {
+            var bestRelatedParty = dataRelatedParty[i].interfaces;
+            var option = document.createElement('option');
+            option.textContent = bestRelatedParty;
+            relatedParty.appendChild(option);
+            //console.log(bestRelatedParty);
+
+        }
+        var getRelationship = await fetch("http://localhost:8080/findRelationship");
+        var dataRelationship = await getRelationship.json();
+        for (var i = 0; i < dataRelationship.length; i++) {
+            var bestRelationship = dataRelationship[i].relationship_Type_Description;
+            var option = document.createElement('option');
+            option.textContent = bestRelationship;
+            relationshipType.appendChild(option);
+            //console.log(bestRelationship);
+        }
+        var getRelatedPartyName = await fetch("http://localhost:8080/findRelatedParty");
+        var dataRelatedPartyName = await getRelatedPartyName.json();
+        for (var i = 0; i < dataRelatedPartyName.length; i++) {
+            var bestRelatedPartyName = dataRelatedPartyName[i].interfaces;
+            var option = document.createElement('option');
+            option.textContent = bestRelatedPartyName;
+            relatedPartyName.appendChild(option);
+            // console.log(bestRelatedPartyName);
+        }
+        var getOccupation = await fetch("http://localhost:8080/findOccupation");
+        var dataOccupation = await getOccupation.json();
+        for (var i = 0; i < dataOccupation.length; i++) {
+            var bestOccupation = dataOccupation[i].occupation_Description;
+            var option = document.createElement('option');
+            option.textContent = bestOccupation;
+            occupation.appendChild(option);
+            //console.log(bestOccupation);
+        }
+        var getEmpCountry = await fetch("http://localhost:8080/findCountry");
+        var dataCountry = await getEmpCountry.json();
+        for (var i = 0; i < dataCountry.length; i++) {
+            var bestEmpCountry = dataCountry[i].country_Description;
+            var option = document.createElement('option');
+            option.textContent = bestEmpCountry;
+            empCountry.appendChild(option);
+            //console.log(bestEmpCountry);
+        }
+        var getEmpProvince = await fetch("http://localhost:8080/findProvince");
+        var dataEmpProvince = await getEmpProvince.json();
+        for (var i = 0; i < dataEmpProvince.length; i++) {
+
+            var option = document.createElement('option');
+            option.value = dataEmpProvince[i].province_List_Description;
+            option.textContent = dataEmpProvince[i].province_List_Description;
+            empProvince.appendChild(option);
+            //console.log(option);
+        }
+        var getEmpDistrict = await fetch("http://localhost:8080/findDistrict");
+        var dataEmpDistrict = await getEmpDistrict.json();
+        empProvince.addEventListener('change', function () {
+            var selectedProvince = empProvince.value;
+            empDistrict.innerHTML = '';
+            for (var i = 0; i < dataEmpDistrict.length; i++) {
+                if (dataEmpDistrict[i].province_List_Description == selectedProvince) {
+                    var option = document.createElement('option');
+                    option.value = dataEmpDistrict[i].district_List_Description;
+                    option.textContent = dataEmpDistrict[i].district_List_Description;
+                    empDistrict.appendChild(option);
+                    //console.log(option);
+                }
+            }
+        });
+
+        var getEmpSector = await fetch("http://localhost:8080/findSector");
+        var dataEmpSector = await getEmpSector.json();
+        empDistrict.addEventListener('change', function () {
+            var selectedDistrict = empDistrict.value;
+            empSector.innerHTML = '';
+            for (var i = 0; i < dataEmpSector.length; i++) {
+                if (dataEmpSector[i].district_List_Description == selectedDistrict) {
+                    var option = document.createElement('option');
+                    option.value = dataEmpSector[i].sector_List_Description;
+                    option.textContent = dataEmpSector[i].sector_List_Description;
+                    empSector.appendChild(option);
+                }
+            }
+        });
+
+
+        var getEmpCell = await fetch("http://localhost:8080/findCell");
+        var dataEmpCell = await getEmpCell.json();
+        empSector.addEventListener('change', function () {
+            var selectedSector = empSector.value;
+            empCell.innerHTML = '';
+            for (var i = 0; i < dataEmpCell.length; i++) {
+                if (dataEmpCell[i].sector_List_Description == selectedSector) {
+                    var option = document.createElement('option');
+                    option.value = dataEmpCell[i].cell_List_Description;
+                    option.textContent = dataEmpCell[i].cell_List_Description;
+                    empCell.appendChild(option);
+                    //console.log(option);
+                }
+            }
+        });
+        // var bestEmpCell = dataEmpCell[i].cell_List_Description;
+
+        var getEmpVillage = await fetch("http://localhost:8080/findVillage");
+        var dataEmpVillage = await getEmpVillage.json();
+        empCell.addEventListener('change', function () {
+            var selectedCell = empCell.value;
+            empVillage.innerHTML = '';
+            for (var i = 0; i < dataEmpVillage.length; i++) {
+                if (dataEmpVillage[i].cell_List_Description == selectedCell) {
+                    var option = document.createElement('option');
+                    option.value = dataEmpVillage[i].village_List_Description;
+                    option.textContent = dataEmpVillage[i].village_List_Description;
+                    empVillage.appendChild(option);
+                    console.log(option);
+                }
+            }
+        });
+
+
+        var getIncome = await fetch("http://localhost:8080/findIncome");
+        var dataIncome = await getIncome.json();
+        for (var i = 0; i < dataIncome.length; i++) {
+            var bestIncome = dataIncome[i].monthly_salary_in_Frw;
+            var option = document.createElement('option');
+            option.textContent = bestIncome;
+            income.appendChild(option);
+            // console.log(bestIncome);
+        }
+
+        var getIncomeFrequency = await fetch("http://localhost:8080/findIncomeFrequency");
+        var dataIncomeFrequency = await getIncomeFrequency.json();
+        for (var i = 0; i < dataIncomeFrequency.length; i++) {
+            var bestIncomeFrequency = dataIncomeFrequency[i].income_Frequency_Description;
+            var option = document.createElement('option');
+            option.textContent = bestIncomeFrequency;
+            incomeFrequency.appendChild(option);
+            // console.log(bestIncomeFrequency);
+        }
+        var getLegalStatus = await fetch("http://localhost:8080/findLegalStatus");
+        var dataLegalStatus = await getLegalStatus.json();
+        for (var i = 0; i < dataLegalStatus.length; i++) {
+            var bestLegalStatus = dataLegalStatus[i].legal_Status_Description;
+            var option = document.createElement('option');
+            option.textContent = bestLegalStatus;
+            legalStatus.appendChild(option);
+            //console.log(option);
+        }
+        var getCustomerStatus = await fetch("http://localhost:8080/findCustomerStatus");
+        var dataCustomerStatus = await getCustomerStatus.json();
+        for (var i = 0; i < dataCustomerStatus.length; i++) {
+            var bestCustomerStatus = dataCustomerStatus[i].general_Status_Description;
+            var option = document.createElement('option');
+            option.textContent = bestCustomerStatus;
+            customerStatus.appendChild(option);
+            // console.log(bestCustomerStatus);
+        }
+
+        const sessionData = {
+            customerType,
+            customerId,
+            lEBook,
+            salutation: salutation.value,
+            nation_id_type: nation_id_type.value,
+            national_id_number,
+            customer_name,
+            surname,
+            forename1,
+            forename2,
+            customerAcronym,
+            visionOUC,
+            visionSBU: visionSBU.value,
+            customerOPenDate,
+            customerGender: customerGender.value,
+            dateOfBirthDay,
+            placeOfBirthday: placeOfBirthday.value,
+            maritalStatus: maritalStatus.value,
+            spouseName,
+            socialEconomicClass: socialEconomicClass.value,
+            nextOfKinName,
+            nextOfKinIDType: nextOfKinIDType.value,
+            nextOfKinIdNumber,
+            nextOfKinTelephone,
+            nextOfKinEmailId,
+            numberOfDependants,
+            country: country.value,
+            nationality: nationality.value,
+            residence,
+            commonAddress2,
+            province: province.value,
+            district: district.value,
+            sector: sector.value,
+            cell: cell.value,
+            commAddressVillage: commAddressVillage.value,
+            commCountry: commCountry.value,
+            commResidentType: commResidentType.value,
+            permAddress1,
+            permAddress2,
+            permProvince: permProvince.value,
+            permDistrict: permDistrict.value,
+            permSector: permSector.value,
+            permCell: permCell.value,
+            permVillage: permVillage.value,
+            permCountry: permCountry.value,
+            emailId,
+            workTelephone,
+            homeTelephone,
+            faxNumber1,
+            faxNumber2,
+            education: education.value,
+            customerIT,
+            naicsCode: naicsCode.value,
+            econSubSectCodeISI: econSubSectCodeISI.value,
+            relatedParty: relatedParty.value,
+            relationshipType: relationshipType.value,
+            relatedPartyName: relatedPartyName.value,
+            ssnNumber: ssnNumber,
+            healthInsuranceNumber,
+            occupation: occupation.value,
+            employerName,
+            employeId,
+            empAddress1,
+            empAddress2,
+            empCountry: empCountry.value,
+            empProvince: empProvince.value,
+            empDistrict: empDistrict.value,
+            empSector: empSector.value,
+            empCell: empCell.value,
+            empVillage: empVillage.value,
+            income: income.value,
+            incomeFrequency: incomeFrequency.value,
+            customerStatus: customerStatus.value,
+            legalStatus: legalStatus.value,
+            LastModifiedData
+
+
+        }
+        
+        localStorage.setItem('mydata', JSON.stringify(sessionData));
+    }
+  
+        
+         async function submitInDatabase(){
+
+            // submitting data in database using javaScript
+            try {
+                const response = await fetch("http://localhost:8080/createCustomer", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        {
+                            // this field will be taking html id which i have capturing before
+                            // let customerType = document.getElementById("customerType").value;
+                            customerType: customerType,
+                            customer_ID:customerId ,
+                            salutation: salutation,
+                            national_ID_Type:nation_id_type,
+                            national_ID_Number: national_id_number,
+                            customer_Name: customer_name,
+                            surname: surname,
+                            forename_1: forename1,
+                            forename_2: forename2,
+                            customer_Acronym: customerAcronym,
+                            vision_OUC: visionOUC,
+                            vision_SBU:  visionSBU,
+                            customer_Open_Date: customerOPenDate,
+                            customer_Gender: customerGender,
+                            date_of_Birth: dateOfBirthDay,
+                            place_of_Birth: placeOfBirthday,
+                            marital_Status: maritalStatus,
+                            spouse_Name: spouseName,
+                            social_Economic_Class: socialEconomicClass,
+                            next_of_kin_Name: nextOfKinName,
+                            next_of_kin_ID_Type: nextOfKinIDType,
+                            next_of_kin_ID_Number: nextOfKinIdNumber,
+                            next_of_kin_Telephone: nextOfKinTelephone,
+                            next_of_kin_Email_ID: nextOfKinEmailId,
+                            number_Of_Dependants: numberOfDependants,
+                            nationality: nationality,
+                            residence: residence,
+                            comm_Address_2: commonAddress2,
+                            province: province,
+                            district: district,
+                            sector: sector,
+                            cell: cell,
+                            comm_Address_village: commAddressVillage,
+                            comm_Country: commCountry,
+                            comm_Residence_Type: commResidentType,
+                            perm_Address_1:permAddress1,
+                            perm_Address_2: permAddress2,
+                            perm_province_id: permProvince,
+                            perm_district: permDistrict,
+                            perm_sector: permSector,
+                            perm_cell: permCell,
+                            perm_Village: permVillage,
+                            perm_Country: permCountry,
+                            email_ID: emailId,
+                            work_Telephone: workTelephone,
+                            home_Telephone: homeTelephone,
+                            fax_Number_1: faxNumber1,
+                            fax_Number_2: faxNumber2,
+                            education: education,
+                            customer_TIN: customerIT,
+                            economic_Sub_Sector_Code_ISIC: econSubSectCodeISI,
+                            related_Party: relatedParty,
+                            relationship_Type: relationshipType,
+                            related_Party_Name: relatedPartyName,
+                            health_Insurance_Number: healthInsuranceNumber,
+                            occupation: occupation,
+                            employer_Name: employerName,
+                            employee_ID: employeId,
+                            emp_Address_1: empAddress1,
+                            emp_Address_2: empAddress2,
+                            emp_Country: empCountry,
+                            emp_province: empProvince,
+                            emp_district: empDistrict,
+                            emp_sector: empSector,
+                            emp_cell: empCell,
+                            emp_Village: empVillage,
+                            income: income,
+                            income_Frequency: incomeFrequency,
+                            legal_Status: legalStatus,
+                            customer_Status: customerStatus,
+                            date_Last_Modified: LastModifiedData,
+                            le_Book: lEBook,
+                            naics_Code: naicsCode,
+                            ssn_Number: ssnNumber
+                        }
+
+                    )
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log(data);
+            } catch (e) {
+                console.log(`An error occurred: ${e}`);
+            }
+        }
+        
+    document.addEventListener('DOMContentLoaded', async () => {
+        await displayData();
+        var form = document.getElementById('myForm');
+        form.addEventListener('submit', submitInDatabase);
+    });
+
+    document.addEventListener('DOMContentLoaded', displayData);
+
+
+    async function showSection(sectionNum) {
+        var sections = document.querySelectorAll('.form-section');
+        sections[sectionNum - 1].classList.add('hidden');
+        sections[sectionNum].classList.remove('hidden');
+
+
+    }
+
+    function beforeSummary() {
+        document.getElementById('customerRegister').style.display = "block";
+        document.getElementById('summary').style.display = "none";
+    }
+
+    function afterSubmit() {
+        document.getElementById('summary').style.display = "block";
+        document.getElementById('customerRegister').style.display = "none";
+    }
+
+    window.onload = function () {
+        beforeSummary();
+    }
+
+
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        //redirectToPage();
+        displayData(event);
+
+
+    });
+    const getCustomerRegistrationData = localStorage.getItem('mydata');
+    var convertionCustomerRegister = JSON.parse(getCustomerRegistrationData);
+    //console.log(convertionCustomerRegister);
+
+    var customerType = convertionCustomerRegister.customerType;
+    document.getElementById('CustomerType-S').textContent = "CustomerType: " + customerType;
+
+    var CustomerId = convertionCustomerRegister.customerId;
+    document.getElementById('CustomerId-S').textContent = "CustomerId: " + CustomerId;
+
+    var LE_book = convertionCustomerRegister.lEBook;
+    document.getElementById('LE_book-S').textContent = "LE_book: " + LE_book;
+
+    var Salutation = convertionCustomerRegister.salutation;
+    document.getElementById('Salutation-S').textContent = "Salutation : " + Salutation;
+
+    var Nation_Id_Type = convertionCustomerRegister.nation_id_type;
+    document.getElementById("Nation_Id_Type-S").textContent = "Nation_Id_Type: " + Nation_Id_Type;
+
+    var National_ID_Number = convertionCustomerRegister.national_id_number;
+    document.getElementById('National_ID_Number-S').textContent = "National_ID_Number: " + National_ID_Number;
+
+    var Customer_Name = convertionCustomerRegister.customer_name;
+    document.getElementById('Customer_Name-S').textContent = "Customer_Name: " + Customer_Name;
+
+    var Surname = convertionCustomerRegister.surname;
+    document.getElementById('Surname-S').textContent = "Surname : " + Surname;
+
+    var ForeName1 = convertionCustomerRegister.forename1;
+    document.getElementById('ForeName1-S').textContent = "ForeName1: " + ForeName1;
+    // foreName2
+    var ForeName2 = convertionCustomerRegister.forename2;
+    document.getElementById('ForeName2-S').textContent = "ForeName2: " + ForeName2;
+
+    var Customer_Acronym = convertionCustomerRegister.customerAcronym;
+    document.getElementById('Customer_Acronym-S').innerHTML = "Customer_Acronym: " + Customer_Acronym;
+
+    var VisionOUC = convertionCustomerRegister.visionOUC;
+    document.getElementById('VisionOUC-S').textContent = "VisionOUC: " + VisionOUC;
+
+
+    var VisionSUB = convertionCustomerRegister.visionSBU;
+    document.getElementById('VisionSUB-S').textContent = "VisionSBU: " + VisionSUB;
+
+    var Customer_Open_Date = convertionCustomerRegister.customerOPenDate;
+    document.getElementById('Customer_Open_Date-S').textContent = "Customer_Open_Date: " + Customer_Open_Date;
+
+    var Customer_Gender = convertionCustomerRegister.customerGender;
+    document.getElementById('Customer_Gender-S').textContent = "Customer_Gender: " + Customer_Gender;
+
+    var Date_OF_BirthDay = convertionCustomerRegister.dateOfBirthDay;
+    document.getElementById('Date_OF_BirthDay-S').textContent = "Date_OF_BirthDay: " + Date_OF_BirthDay;
+
+    var PlaceOfBirthDay = convertionCustomerRegister.placeOfBirthday;
+    document.getElementById('PlaceOfBirthDay-S').textContent = "PlaceOfBirthDay: " + PlaceOfBirthDay;
+
+    var MaritalStatus = convertionCustomerRegister.maritalStatus;
+    document.getElementById('MaritalStatus-S').textContent = "MaritalStatus: " + MaritalStatus;
+
+    var Spouse_Name = convertionCustomerRegister.spouseName;
+    document.getElementById('Spouse_Name-S').textContent = "Spouse_Name: " + Spouse_Name;
+
+    var Social_Economic_Class = convertionCustomerRegister.socialEconomicClass;
+    document.getElementById('Social_Economic_Class-S').textContent = "Social_Economic_Class: " + Social_Economic_Class;
+
+    var Nex_of_kin_Name = convertionCustomerRegister.nextOfKinName;
+    document.getElementById('Nex_of_kin_Name-S').textContent = "Nex_of_kin_Name: " + Nex_of_kin_Name;
+
+    var Next_of_kin_Id_Type = convertionCustomerRegister.nextOfKinIDType;
+    document.getElementById('Next_of_kin_Id_Type-S').textContent = "Next_of_kin_Id_Type: " + Next_of_kin_Id_Type;
+
+    var Next_of_kin_id_number = convertionCustomerRegister.nextOfKinName;
+    document.getElementById('Next_of_kin_id_number-S').textContent = "Next_of_kin_id_number: " + Next_of_kin_id_number;
+
+    var Next_of_kin_telephone = convertionCustomerRegister.nextOfKinTelephone;
+    document.getElementById('Next_of_kin_telephone-S').textContent = "Next_of_kin_telephone: " + Next_of_kin_telephone;
+
+    var Next_of_kin_Email_Id = convertionCustomerRegister.nextOfKinEmailId;
+    document.getElementById('Next_of_kin_Email_Id-S').textContent = "Next_of_kin_Email_Id: " + Next_of_kin_Email_Id;
+
+    var Number_of_dependants = convertionCustomerRegister.numberOfDependants;
+    document.getElementById('Number_of_dependants-S').textContent = "Number_of_dependants: " + Number_of_dependants;
+
+    var Nationality = convertionCustomerRegister.nationality;
+    document.getElementById('Nationality-S').textContent = "Nationality: " + Nationality;
+
+    var Resident = convertionCustomerRegister.residence;
+    document.getElementById('Resident-S').textContent = "Resident: " + Resident;
+
+    var Comm_Address_2 = convertionCustomerRegister.commonAddress2;
+    document.getElementById('Comm_Address_2-S').textContent = "Comm_Address_2: " + Comm_Address_2;
+
+    var Province = convertionCustomerRegister.province;
+    document.getElementById('Province-S').textContent = "Province: " + Province;
+
+    var District = convertionCustomerRegister.district;
+    document.getElementById('District-S').textContent = "District: " + District;
+
+    var Sector = convertionCustomerRegister.sector;
+    document.getElementById('Sector-S').textContent = "Sector: " + Sector;
+
+    var Cell = convertionCustomerRegister.cell;
+    document.getElementById('Cell-S').textContent = "Cell: " + Cell;
+
+    var Village = convertionCustomerRegister.cell;
+    document.getElementById('Village-S').textContent = "Village: " + Village;
+
+    var Comm_Address_village = convertionCustomerRegister.commAddressVillage;
+    document.getElementById('Comm_Address_village-S').textContent = "Comm_Address_village: " + Comm_Address_village;
+
+    var Comm_country = convertionCustomerRegister.commCountry;
+    document.getElementById('Comm_country-S').textContent = "Comm_country: " + Comm_country;
+
+    var Comm_resident_Type = convertionCustomerRegister.commResidentType;
+    document.getElementById('Comm_resident_Type-S').textContent = "Comm_resident_Type: " + Comm_resident_Type;
+
+    var Perm_Address_1 = convertionCustomerRegister.permAddress1;
+    document.getElementById('Perm_Address_1-S').textContent = "Perm_Address_1: " + Perm_Address_1;
+
+    //--------------------------------------------------------------------------------------------
+    var Perm_perm_Address_2 = convertionCustomerRegister.permAddress2;
+    document.getElementById('Perm_perm_Address_2-S').innerHTML = "Perm_perm_Address_2: " + Perm_perm_Address_2;
+
+    var perm_province_id = convertionCustomerRegister.permProvince;
+    document.getElementById('perm_province_id-S').textContent = "perm_province_id: " + perm_province_id;
+    //visionSUB
+
+    var perm_perm_district = convertionCustomerRegister.permDistrict;
+    document.getElementById('perm_perm_district-S').textContent = "perm_perm_district: " + perm_perm_district;
+    var permSector = convertionCustomerRegister.permSector;
+    document.getElementById('perm_sector-S').textContent = "perm_Sector: " +permSector;
+
+    var permCell = convertionCustomerRegister.permCell;
+    document.getElementById('perm-cell-S').textContent = "perm_cell: "+permCell;
+
+    var perm_village = convertionCustomerRegister.permVillage;
+    document.getElementById('perm_village-S').textContent = "perm_village: " + perm_village;
+
+    var perm_country = convertionCustomerRegister.permCountry;
+    document.getElementById('perm_country-S').textContent = "perm_country: " + perm_country;
+
+
+    var Email_Id = convertionCustomerRegister.emailId;
+    document.getElementById('Email_Id-S').textContent = "Email_Id: " + Email_Id;
+
+    var Perm_Work_Telephone = convertionCustomerRegister.workTelephone;
+    document.getElementById('Perm_Work_Telephone-S').textContent = "Perm_Work_Telephone: " + Perm_Work_Telephone;
+
+    var Home_telephone = convertionCustomerRegister.homeTelephone;
+    document.getElementById('Home_telephone-S').textContent = "Home_telephone: " + Home_telephone;
+
+    var Fax_Number_1 = convertionCustomerRegister.faxNumber1;
+    document.getElementById('Fax_Number_1-S').textContent = "Fax_Number_1: " + Fax_Number_1;
+
+    var Fax_number_2 = convertionCustomerRegister.faxNumber2;
+    document.getElementById('Fax_number_2-S').textContent = "Fax_number_2: " + Fax_number_2;
+
+    var Education = convertionCustomerRegister.education;
+    document.getElementById('Education-S').textContent = "Education: " + Education;
+
+    var Customer_TIN = convertionCustomerRegister.customerIT;
+    document.getElementById('Customer_TIN-S').textContent = "Customer_TIN: " + Customer_TIN;
+
+    var NAICS_CODE = convertionCustomerRegister.naicsCode;
+    document.getElementById('NAICS_CODE-S').textContent = "NAICS_CODE: " + NAICS_CODE;
+
+    var EconomSubSectorCodeISIC = convertionCustomerRegister.econSubSectCodeISI;
+    document.getElementById('EconomSubSectorCodeISIC-S').textContent = "EconomSubSectorCodeISIC: " + EconomSubSectorCodeISIC;
+
+    var related_Party = convertionCustomerRegister.relatedParty;
+    document.getElementById('related_Party-S').textContent = "related_Party: " + related_Party;
+
+    var relationship_type = convertionCustomerRegister.relationshipType;
+    document.getElementById('relationship_type-S').textContent = "relationship_type: " + relationship_type;
+
+    var relatedPartyName = convertionCustomerRegister.residence;
+    document.getElementById('relatedPartyName-S').textContent = "relatedPartyName: " + relatedPartyName;
+
+    var SSN_NUMBER = convertionCustomerRegister.ssnNumber;
+    document.getElementById('SSN_NUMBER-S').textContent = "SSN_NUMBER: " + SSN_NUMBER;
+
+    var health_Insurance_Number = convertionCustomerRegister.healthInsuranceNumber;
+    document.getElementById('health_Insurance_Number-S').textContent = "health_Insurance_Number: " + health_Insurance_Number;
+
+    var Occupation = convertionCustomerRegister.occupation;
+    document.getElementById('Occupation-S').textContent = "Occupation: " + Occupation;
+
+    var Employer_Name = convertionCustomerRegister.employerName;
+    document.getElementById('Employer_Name-S').textContent = "Employer_Name: " + Employer_Name;
+
+    var Employee_Id = convertionCustomerRegister.employeId;
+    document.getElementById('Employee_Id-S').textContent = "Employee_Id: " + Employee_Id;
+
+    var Emp_Address_1 = convertionCustomerRegister.empAddress1;
+    document.getElementById('Emp_Address_1-S').textContent = "Emp_Address_1: " + Emp_Address_1;
+
+    var Emp_address_2 = convertionCustomerRegister.empAddress2;
+    document.getElementById('Emp_address_2-S').textContent = "Emp_address_2: " + Emp_address_2;
+
+    var Emp_country = convertionCustomerRegister.empCountry;
+    document.getElementById('Emp_country-S').textContent = "Emp_country: " + Emp_country;
+
+    var Emp_province = convertionCustomerRegister.empProvince;
+    document.getElementById('Emp_province-S').textContent = "Emp_province: " + Emp_province;
+    //-----------------------------------------------------------------------------------------------
+
+    var Emp_district = convertionCustomerRegister.empDistrict;
+    document.getElementById('Emp_district-S').textContent = "Emp_district: " + Emp_district;
+
+    var Employer_Name = convertionCustomerRegister.employerName;
+    document.getElementById('Employer_Name-S').textContent = "Employer_Name: " + Employer_Name;
+    var Emp_Sector = convertionCustomerRegister.empSector;
+    document.getElementById("Emp_Sector-S").textContent = "Emp_Sector: " + Emp_Sector;
+
+    var Emp_cell = convertionCustomerRegister.empCell;
+    document.getElementById('Emp_cell-S').textContent = "Emp_cell: " + Emp_cell;
+
+    var Emp_village = convertionCustomerRegister.empVillage;
+    document.getElementById('Emp_village-S').textContent = "Emp_village: " + Emp_village;
+
+    var Income = convertionCustomerRegister.income;
+    document.getElementById('Income-S').textContent = "Income: " + Income;
+
+    var Income_Frequency = convertionCustomerRegister.incomeFrequency;
+    document.getElementById('Income_Frequency-S').textContent = "Income_Frequency: " + Income_Frequency;
+
+    var Legal_status = convertionCustomerRegister.legalStatus;
+    document.getElementById('Legal_status-S').textContent = "Legal_status: " + Legal_status;
+
+    var Customer_status = convertionCustomerRegister.customerStatus;
+    document.getElementById('Customer_status-S').textContent = "Customer_status: " + Customer_status;
+
+    var Date_Last_Modified = convertionCustomerRegister.LastModifiedData;
+    document.getElementById('Date_Last_Modified-S').textContent = "Date_Last_Modified: " + Date_Last_Modified;
+
+
+</script>
+
+
+</html>

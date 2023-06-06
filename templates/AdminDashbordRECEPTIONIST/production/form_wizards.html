@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Physiotherapy patient management and analytics system | </title>
+
+  <!-- Bootstrap -->
+  <link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="{% static 'vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+  <!-- Animate.css -->
+  <link href="{% static 'vendors/animate.css/animate.min.css' %}" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="{% static 'build/css/custom.min.css' %}" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Physiotherapy patient management and
+                analytics system!</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="{% static 'images/img.jpg' %}" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>new</span>
+              <h2>user</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+
+                    <li><a href="home">Dashboard3</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+
+
+                    <li><a href="form_advanced">Set appointments</a></li>
+
+                    <li><a href="form_wizards">Patient Registration</a></li>
+
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i> All Report <span class="fa fa-chevron-down"></span></a>
+
+                </li>
+                <li><a><i class="fa fa-table"></i> All Information<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="tables">Patient List</a></li>
+                    <li><a href="tables_dynamic">appointments List</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+            <div class="menu_section">
+              <h3>Live On</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="profile">Profile</a></li>
+                  </ul>
+                </li>
+
+
+              </ul>
+            </div>
+
+          </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+          <nav class="nav navbar-nav">
+            <ul class=" navbar-right">
+              <li class="nav-item dropdown open" style="padding-left: 15px;">
+                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
+                  data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" alt="">Albert
+                </a>
+                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="javascript:;"> Profile</a>
+                  <a class="dropdown-item" href="javascript:;">
+                    <span class="badge bg-red pull-right">50%</span>
+                    <span>Settings</span>
+                  </a>
+                  <a class="dropdown-item" href="javascript:;">Help</a>
+                  <a class="dropdown-item" href="login"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                </div>
+              </li>
+
+              <li role="presentation" class="nav-item dropdown open">
+                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="text-center">
+                      <a class="dropdown-item">
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Patient Registration Form</h3>
+            </div>
+
+            <div class="title_right">
+              <div class="col-md-5 col-sm-5  form-group row pull-right top_search">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Go!</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="row">
+
+            <div class="col-md-12 col-sm-12 ">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Patient Registration <small>Form</small></h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
+                          class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+
+                  <!-- Smart Wizard -->
+                  <p>This is a basic form Record patients.</p>
+                  <div id="wizard" class="form_wizard wizard_horizontal">
+                    <ul class="wizard_steps">
+                      <li>
+                        <a href="#step-1">
+                          <span class="step_no">1</span>
+                          <span class="step_descr">
+                            Step 1<br />
+                            <small>Step 1 description</small>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#step-2">
+                          <span class="step_no">2</span>
+                          <span class="step_descr">
+                            Step 2<br />
+                            <small>Step 2 description</small>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#step-3">
+                          <span class="step_no">3</span>
+                          <span class="step_descr">
+                            Step 3<br />
+                            <small>Step 3 description</small>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#step-4">
+                          <span class="step_no">4</span>
+                          <span class="step_descr">
+                            Step 4<br />
+                            <small>Step 4 description</small>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <form method="POST" id="myForm" class="form-horizontal form-label-left">
+                      <div id="step-1">
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Patient ID <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="patientid" required="required" class="form-control  ">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">National ID
+                            Number <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="nationalid" required="required" class="form-control  ">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> FirstName <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="firstname" required="required" class="form-control  ">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">LastName <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="lastname" name="last-name" required="required" class="form-control ">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Full
+                            Name</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input id="fullname" class="form-control col" type="text" name="middle-name">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Patient registed
+                            Date </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input id="registdate" class="form-control col" type="date" name="middle-name">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input id="birthday" class="date-picker form-control" required="required" type="Date">
+                          </div>
+                        </div>
+
+
+
+                        <!-- second dide of my patient registration form -->
+
+                      </div>
+                      <div id="step-2">
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Email ID <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6">
+                            <input type="text" id="email" required="required" class="form-control  ">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Telephone <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <input type="text" id="telphone" required="required" class="form-control  ">
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">National ID Type
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="national-id-type" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Patient Gender
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="patientgender" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Place of Birth
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="placeofbirth" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Marital Status
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="martialstatus" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nationality <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="nationality" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div id="step-3">
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Residence <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="residence" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Province <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="province" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">District <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="District" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Sector <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="Sector" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Cell <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="Cell" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Village <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="Village" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Education <span
+                              class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="Education" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Economic Sub
+                            Sector
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="economic" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+
+                      </div>
+                      <div id="step-4">
+                        <!-- <form class="form-horizontal form-label-left"> -->
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Legal Status
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="LegalStatus" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Patient Status
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <select id="PatientStatus" required="required" class="form-control">
+                              <option value="">Please select</option>
+
+
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Register Patient
+                            <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <button id="PatientStatus" type="submit" onclick="showdata(event)"
+                              class="form-control btn btn-primary" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false">
+                              Register Patient
+                            </button>
+
+                          </div>
+                        </div>
+
+
+
+
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+                <!-- End SmartWizard Content -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /page content -->
+
+
+  </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+  <!-- Bootstrap -->
+  <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- FastClick -->
+  <script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+  <!-- NProgress -->
+  <script src="{% static 'vendors/nprogress/nprogress.js' %}"></script>
+  <!-- jQuery Smart Wizard -->
+  <script src="{% static 'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js' %}"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="{% static 'build/js/custom.min.js' %}"></script>
+
+  <script>
+
+
+    async function showdata(event) {
+      event.preventDefault(); // prevent the form from submitting normally
+
+      
+      var NationalIDNumber = document.getElementById('nationalid').value;
+      var PatientName = document.getElementById('fullname').value
+      var FirstName = document.getElementById('firstname').value
+      var LastName = document.getElementById('lastname').value
+      var PatientregistedDate = document.getElementById('registdate').value
+
+      var DateofBirth = document.getElementById('birthday').value
+      var EmailID = document.getElementById('email').value
+      var Telephone = document.getElementById('telphone').value
+      var NationalIDTyp = document.getElementById('national-id-type');
+      var PatientGender = document.getElementById('patientgender');
+      var PatientG = document.getElementById('patientgender').value;
+      var PlaceofBirth = document.getElementById('placeofbirth');
+      var MaritalStatus = document.getElementById('martialstatus');
+      // PatientName.MaritalStatus = MaritalStatus;
+      var Nationality = document.getElementById('nationality');
+      // PatientName.Nationality = Nationality;
+      var Residence = document.getElementById('residence');
+      // PatientName.Residence = Residence;
+      var Province = document.getElementById('province');
+      // PatientName.Province = Province;
+      var District = document.getElementById('District');
+      var Sector = document.getElementById('Sector');
+      var Cell = document.getElementById('Cell');
+      var Village = document.getElementById('Village');
+      var Education = document.getElementById('Education');
+      var EconomicSubSector = document.getElementById('economic');
+      var LegalStatus = document.getElementById('LegalStatus');
+      var PatientStatus = document.getElementById('PatientStatus');
+
+
+      // event.preventDefault(); // Prevent form submission
+
+
+      var randomNumber = Math.floor(Math.random() * 900000) + 100000;
+      var patientIdbyRandomly = "PTE-" + randomNumber;
+      console.log('patientIdbyRandomly: '+patientIdbyRandomly)
+
+      var patientid = document.getElementById('patientid').value = patientIdbyRandomly;
+   
+
+
+
+
+      // National_ID_Type
+      const response = await fetch('http://127.0.0.1:8000/National_ID_Typedata/');
+      const data = await response.json();
+
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i])
+        const option = document.createElement('option');
+        option.value = data[i].ID_Type;
+        option.textContent = data[i].ID_Type;
+        NationalIDTyp.appendChild(option); // Append to the select element
+        // console.log(data[i].ID_Type)
+      }
+
+      // National_ID_Type
+      var patient_gender = await fetch('http://127.0.0.1:8000/Patient_Genderdata/');
+      var patientGendaData = await patient_gender.json();
+      for (var i = 0; i < patientGendaData.length; i++) {
+        var option = document.createElement('option');
+        option.value = patientGendaData[i].GenderDescription;
+        option.textContent = patientGendaData[i].GenderDescription;
+        PatientGender.appendChild(option)
+
+      }
+
+      // Marital_Statusdata
+      var Marital_Status = await fetch('http://127.0.0.1:8000/Marital_Statusdata/');
+      var Marital_Statusdata = await Marital_Status.json();
+      for (var i = 0; i < Marital_Statusdata.length; i++) {
+        var option = document.createElement('option');
+        option.value = Marital_Statusdata[i].Marital_Status_Description;
+        option.textContent = Marital_Statusdata[i].Marital_Status_Description;
+        MaritalStatus.appendChild(option)
+
+
+      }
+
+      // Place Of Birth
+      var placeofBirth = await fetch('http://127.0.0.1:8000/Countrydata/');
+      var placeofBirthData = await placeofBirth.json();
+      for (var i = 0; i < placeofBirthData.length; i++) {
+        var option = document.createElement('option');
+        option.value = placeofBirthData[i].Country_Description;
+        option.textContent = placeofBirthData[i].Country_Description;
+        PlaceofBirth.appendChild(option)
+
+
+      }
+
+      for (let i = 0; i < placeofBirthData.length; i++) {
+        var option = document.createElement('option');
+        option.value = placeofBirthData[i].Country_Description;
+        option.textContent = placeofBirthData[i].Country_Description;
+        Nationality.appendChild(option)
+      }
+
+      for (let i = 0; i < placeofBirthData.length; i++) {
+        var option = document.createElement('option');
+        option.value = placeofBirthData[i].Country_Description;
+        option.textContent = placeofBirthData[i].Country_Description;
+        Residence.appendChild(option)
+      }
+
+      // Province
+      var Provinceda = await fetch('http://127.0.0.1:8000/Provincedata/');
+      var Provincedata = await Provinceda.json();
+
+      for (var i = 0; i < Provincedata.length; i++) {
+        var option = document.createElement('option');
+        option.value = Provincedata[i].Province_List_Description;
+        option.textContent = Provincedata[i].Province_List_Description;
+        Province.appendChild(option);
+      }
+
+      // District
+      var Districtdata = await fetch('http://127.0.0.1:8000/Districtdata/');
+      var districtresult = await Districtdata.json();
+
+      Province.addEventListener('change', function () {
+        var selectedProvince = Province.value;
+        patientData.selectedProvince = selectedProvince;
+        District.innerHTML = ''; // Clear previous options
+
+        for (var i = 0; i < districtresult.length; i++) {
+          if (districtresult[i].Province_List_Description === selectedProvince) {
+            var option = document.createElement('option');
+            option.value = districtresult[i].District_List_Description;
+            option.textContent = districtresult[i].District_List_Description;
+            District.appendChild(option);
+          }
+        }
+      });
+
+
+      // sector
+      var sectordata = await fetch('http://127.0.0.1:8000/Sectordata/');
+      var sectorresult = await sectordata.json();
+
+      District.addEventListener('change', function () {
+        var selectedDistrict = District.value;
+        patientData.selectedDistrict = selectedDistrict;
+        Sector.innerHTML = ''; // Clear previous options
+
+        for (var i = 0; i < sectorresult.length; i++) {
+          if (sectorresult[i].District_List_Description === selectedDistrict) {
+            var option = document.createElement('option');
+            option.value = sectorresult[i].Sector_List_Description;
+            option.textContent = sectorresult[i].Sector_List_Description;
+            Sector.appendChild(option);
+          }
+        }
+      });
+
+
+      // cell
+      var celldata = await fetch('http://127.0.0.1:8000/Celldata/');
+      var cellresult = await celldata.json();
+
+      Sector.addEventListener('change', function () {
+        var selectedSector = Sector.value;
+        patientData.selectedSector = selectedSector;
+        Cell.innerHTML = ''; // Clear previous options
+
+        for (var i = 0; i < cellresult.length; i++) {
+
+          if (cellresult[i].Sector_List_Description === selectedSector) {
+            console.log('cellresult ' + cellresult[i].Cell_List_Description)
+            var option = document.createElement('option');
+            option.value = cellresult[i].Cell_List_Description;
+            option.textContent = cellresult[i].Cell_List_Description;
+            Cell.appendChild(option);
+          }
+        }
+      });
+
+
+
+      // village
+      var villagedata = await fetch('http://127.0.0.1:8000/Villagedata/');
+      var villageresult = await villagedata.json();
+
+      Cell.addEventListener('change', function () {
+        var selectedCell = Cell.value;
+        patientData.selectedCell = selectedCell;
+        Village.innerHTML = ''; // Clear previous options
+
+        for (var i = 0; i < villageresult.length; i++) {
+          if (villageresult[i].Cell_List_Description === selectedCell) {
+            var option = document.createElement('option');
+            option.value = villageresult[i].Vilage_List_Description;
+            option.textContent = villageresult[i].Vilage_List_Description;
+            Village.appendChild(option);
+          }
+        }
+      });
+
+      // education
+
+      var educationdata = await fetch('http://127.0.0.1:8000/Educationdata/');
+      var educationresult = await educationdata.json();
+      
+
+      for (let i = 0; i < educationresult.length; i++) {
+        var option = document.createElement('option');
+        option.value = educationresult[i].Education_Description;
+        option.textContent = educationresult[i].Education_Description;
+        Education.appendChild(option);
+        var educationdata = Education.value;
+        // patientData.educationdata =educationdata;
+      }
+
+      // education
+
+      var economiSector = await fetch('http://127.0.0.1:8000/Economic_Sub_Sector_Code_ISICdaat/');
+      var economicdata = await economiSector.json();
+
+      for (let i = 0; i < economicdata.length; i++) {
+        var option = document.createElement('option');
+        option.value = economicdata[i].ECONOMIC_SUB_SECTOR_CODE_ISIC_DESC;
+        option.textContent = economicdata[i].ECONOMIC_SUB_SECTOR_CODE_ISIC_DESC;
+        EconomicSubSector.appendChild(option);
+      }
+
+      // education
+
+      var LegalStatusdata = await fetch('http://127.0.0.1:8000/Legal_Statusdata/');
+      var LegalStatusResult = await LegalStatusdata.json();
+
+      for (let i = 0; i < LegalStatusResult.length; i++) {
+        var option = document.createElement('option');
+        option.value = LegalStatusResult[i].Legal_Status_Description;
+        option.textContent = LegalStatusResult[i].Legal_Status_Description;
+        LegalStatus.appendChild(option);
+      }
+
+      // education
+
+      var PatientStatusdata = await fetch('http://127.0.0.1:8000/Patient_Statusdata/');
+      var PatientStatusresult = await PatientStatusdata.json();
+
+      for (let i = 0; i < PatientStatusresult.length; i++) {
+        var option = document.createElement('option');
+        option.value = PatientStatusresult[i].General_Status_Description;
+        option.textContent = PatientStatusresult[i].General_Status_Description;
+        PatientStatus.appendChild(option);
+      }
+
+
+      const patientData = {
+        patientid,
+        NationalIDNumber,
+        PatientName,
+        FirstName,
+        LastName,
+        PatientregistedDate,
+        DateofBirth,
+        EmailID,
+        Telephone,
+        NationalIDTyp: NationalIDTyp.value,
+        PatientGender: PatientGender.value,
+        PlaceofBirth: PlaceofBirth.value,
+        MaritalStatus: MaritalStatus.value,
+        Nationality: Nationality.value,
+        Residence: Residence.value,
+        Province: Province.value,
+        District: District.value,
+        Sector: Sector.value,
+        Cell: Cell.value,
+        Village: Village.value,
+        Education: Education.value,
+        EconomicSubSector: EconomicSubSector.value,
+        LegalStatus: LegalStatus.value,
+        PatientStatus: PatientStatus.value
+      };
+
+      // Store the patient data in the session storage
+      sessionStorage.setItem('patientData', JSON.stringify(patientData));
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/patient_registration/", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(
+            {
+
+              patient_ID: patientIdbyRandomly,
+              National_ID_Number: NationalIDNumber,
+              patient_Name: PatientName,
+              FirstName: FirstName,
+              LastName: LastName,
+              patient_registed_Date: PatientregistedDate,
+              Date_of_Birth: DateofBirth,
+              Email_ID: EmailID,
+              Telephone: Telephone,
+              National_ID_Typ: null,
+              patient_Gender: null,
+              Place_of_Birth: null,
+              Marital_Status: null,
+              Nationality: null,
+              Residence: null,
+              province: null, // Check if this should be 'province: Province' instead
+              district: null,
+              sector: null,
+              cell: null,
+              village: null,
+              Education: null,
+              Economic_Sub_Sector: null,
+              Legal_Status: null, // Corrected typo 'nLegalStatusull' to 'LegalStatus'
+              patient_Status: null
+
+            }
+          )
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        // console.log(data);
+        window.location.href = "{% url 'tables' %}";
+      } catch (e) {
+        console.log(`An error occurred: ${e}`);
+      }
+
+      // // Get data from local storage
+      // const myData = localStorage.getItem('myData');
+
+      // // Store the data in session storage
+      // sessionStorage.setItem('myData', myData);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', showdata);
+    document.addEventListener('DOMContentLoaded', async () => {
+      // await fetchUserData();
+      var form = document.getElementById('myForm');
+      form.addEventListener('submit', showdata);
+      // window.location.href = "{% url 'tables' %}";
+    });
+
+  </script>
+
+</body>
+
+
+</html>

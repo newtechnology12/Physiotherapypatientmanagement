@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>this the bages text</h1>
+</body>
+
+
+
+<script>
+    // ...
+
+    const summary = (data) => `
+  <h2>Appointment Summary</h2>
+  <p>Patient ID: ${data.patient_id_number}</p>
+  <p>Date: ${data.date}</p>
+  <p>Time: ${data.time}</p>
+  <p>Status: ${data.status}</p>
+  <p>Patient: ${data.patient}</p>
+  <p>Therapist: ${data.therapist}</p>
+  <p><strong>Message: </strong>${message}</p>
+  <button id="downloadBtn">Download Summary</button>
+  <button id="shareBtn">Share on Social Media</button>
+`;
+
+    const downloadSummary = (data) => {
+        try {
+            const filename = 'appointment_summary.pdf';
+
+            // PDF generation code
+
+            const docDefinition = {
+            content: [
+              { text: 'Appointment Summary', style: 'header' },
+              { text: data.patient_id_number, style: 'text' },
+              { text: data.date, style: 'text' },
+              { text: data.time, style: 'text' },
+              { text: data.status, style: 'text' },
+              { text: data.patient, style: 'text' },
+              { text: data.therapist, style: 'text' },
+              { text: 'Message:', style: 'textBold' },
+              { text: message, style: 'text' },
+            ],
+            styles: {
+              header: { fontSize: 18, bold: true, margin: [0, 0, 0, 10] },
+              text: { fontSize: 12, margin: [0, 0, 0, 5] },
+              textBold: { fontSize: 12, margin: [0, 0, 0, 5], bold: true },
+            },
+          };
+
+            pdfMake.createPdf(docDefinition).download(filename);
+        } catch (e) {
+            console.log(`An error occurred: ${e}`);
+        }
+    };
+
+    const shareSummary = (data) => {
+        // Sharing code
+        const appointmentSummary = `Appointment Summary:
+        Patient ID: ${data.patient_id_number}
+        Date: ${data.date}
+        Time: ${data.time}
+        Status: ${data.status}
+        Patient: ${data.patient}
+        Therapist: ${data.therapist}
+        Message: ${message}`;
+
+        const encodedSummary = encodeURIComponent(appointmentSummary);
+
+        // Generate the sharing URL for Twitter
+        const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodedSummary}`;
+
+        // Open the sharing URL in a new window
+        window.open(twitterShareUrl, '_blank');
+      
+    };
+
+    document.getElementById('summaryContainer').innerHTML = summary(data);
+
+    // Add event listeners to the buttons
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+        downloadSummary(data);
+    });
+
+    document.getElementById('shareBtn').addEventListener('click', () => {
+        shareSummary(data);
+    });
+
+</script>
+
+</html>
